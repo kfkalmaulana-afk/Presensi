@@ -122,7 +122,7 @@
                     </div>
 
                     <!-- Dynamic Routine Tasks Container -->
-                    <div id="routine_tasks_container" class="grid grid-cols-1 md:grid-cols-2 gap-2 max-h-[300px] overflow-y-auto pr-1">
+                    <div id="routine_tasks_container" class="grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-2 max-h-none md:max-h-[320px] overflow-visible md:overflow-y-auto pr-1">
                         <!-- Content will be dynamically populated here by renderRoutineTasks() -->
                     </div>
                 </div>
@@ -741,13 +741,13 @@
             let html = '';
 
             tasks.forEach(task => {
-                const compactIcon = task.icon ? task.icon.replace(/w-4\.5 h-4\.5/g, 'w-3.5 h-3.5') : '';
+                const compactIcon = task.icon ? task.icon.replace(/w-4\.5 h-4\.5/g, 'w-3 h-3 md:w-3.5 md:h-3.5') : '';
                 html += `
-                    <div class="flex items-center gap-2.5 p-2.5 bg-white border border-slate-100/80 rounded-xl shadow-sm hover:border-rose-100 transition-all">
-                        <div class="flex-shrink-0 w-7 h-7 rounded-lg ${task.bg} border ${task.border} flex items-center justify-center ${task.textCol}">
+                    <div class="flex items-center gap-2 md:gap-2.5 p-2 md:p-2.5 bg-white border border-slate-100/80 rounded-xl shadow-sm hover:border-rose-100 transition-all">
+                        <div class="flex-shrink-0 w-6 h-6 md:w-7 md:h-7 rounded-lg ${task.bg} border ${task.border} flex items-center justify-center ${task.textCol}">
                             ${compactIcon}
                         </div>
-                        <p class="text-[10px] font-bold text-slate-700 leading-normal">${task.text}</p>
+                        <p class="text-[9.5px] md:text-[10px] font-bold text-slate-700 leading-snug md:leading-normal">${task.text}</p>
                     </div>
                 `;
             });
